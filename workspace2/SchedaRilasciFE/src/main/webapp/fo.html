@@ -9,6 +9,7 @@
 
 <link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
 <link href="bootstrap-4.0.0/css/bootstrap.css" rel="stylesheet">
+<link href="animate.css/animate.css" rel="stylesheet">
 <link href="tether-1.3.3/dist/css/tether.css" rel="stylesheet">
 <!-- -------------------------------------------------------------------------------- -->
 <link href="css/footer.css" rel="stylesheet">
@@ -35,15 +36,24 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#">Navbar</a>
+		<a class="navbar-brand" href="/SchedaRilasciFE">SchedaRilasci</a>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active"><a class="nav-link" href="fo.html">Info
-						Generali <span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item"><a class="nav-link" href="idpolarion.html">ID Polarion</a></li>
-				<li class="nav-item"></li>
+						Generali </a></li>
+				<li class="nav-item"><a class="nav-link" href="idpolarion.html">ID
+						Polarion</a></li>
+				<li class="nav-item dropdown navbar-inverse"><a
+					class="nav-link dropdown-toggle bg-inverse"
+					href="http://example.com" id="navbarDropdownMenuLink"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Dropdown link </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Action</a> <a
+							class="dropdown-item" href="#">Another action</a> <a
+							class="dropdown-item" href="#">Something else here</a>
+					</div></li>
 			</ul>
 
 		</div>
@@ -52,42 +62,55 @@
 	<br>
 	<br>
 
+	<div class="container">
+		<div class="row">
+			<div class="col-sm" ng-controller="controllerCsv">
+				<div class="card animated bounceInDown">
+					<div class="card-header">
+						<h2>Informazioni Generali</h2>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6">
+								<br>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-primary">Numero Rilasci in IT:
+											<span class="badge badge-default">56</span>
+										</span>
+									</h3>
+								</div>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-info">Data Estrazione: <span
+											class="badge badge-default">{{csv[0].fileDate |
+												date:'yyyy-MM-dd HH:mm:ss'}}</span>
+										</span>
+									</h3>
+								</div>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-warning">Repository: <span
+											class="badge badge-default">{{csv[0].repository}}</span>
+										</span>
+									</h3>
+								</div>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-danger">Nome file : <span
+											class="badge badge-default">{{csv[0].fileName}}</span>
+										</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<div class="container">
-  <div class="row">
-    <!-- serve per centrare la pagina non rimuovere please -->
-    <div class="col-sm"></div>
 
-    <div class="col-sm-10">
-      <h2>Info Generali</h2>
-      <hr>
-
-      <div ng-controller="controllerCsv">
-        <div class="input-group" style="margin-bottom: 10px;">
-          <h3><span class="badge badge-default">Numero Totale rilasci :
-							3349 </span></h3>
-						
-        </div>
-        <div class="input-group" style="margin-bottom: 15px;">
-         <h3><span class="badge badge-default" ng-model="fileName">Nome file : 
-         
-						{{csv[0].fileName}}	 </h3>
-        </div>
-        <div class="input-group" style="margin-bottom: 15px;">
-        <h3><span class="badge badge-default" ng-model="scope.csv.fileDate">Data Estrazione: {{csv[0].fileDate | date:'yyyy-MM-dd HH:mm:ss'}}
-							 </span></h3>
-        </div>
-        <h3><div class="input-group" style="margin-bottom: 15px;">
-        						<span class="badge badge-default" ng-model="scope.csv.repository">Repository : {{csv[0].repository}}
-							 </span></h3>
-        </div>
-
-      </div>
-    </div>
-    <!-- serve per centrare la pagina non rimuovere please -->
-    <div class="col-sm"></div>
-  </div>
-</div>
 
 
 
@@ -100,7 +123,5 @@
 			<span class="text-muted">Place sticky footer content here.</span>
 		</div>
 	</footer>
-
-
 </body>
 </html>
