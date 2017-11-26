@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link href="font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+<link href="bootstrap-4.0.0/css/bootstrap.css" rel="stylesheet">
+<link href="animate.css/animate.css" rel="stylesheet">
+<link href="tether-1.3.3/dist/css/tether.css" rel="stylesheet">
+<!-- -------------------------------------------------------------------------------- -->
+<link href="css/footer.css" rel="stylesheet">
+<!-- -------------------------------------------------------------------------------- -->
+<script src="angular/angular.js"></script>
+<script src="angular/angular-route.js"></script>
+<script src="jquery/jquery-3.2.1.js"></script>
+<script src="tether-1.3.3/dist/js/tether.js"></script>
+<script src="bootstrap-4.0.0/js/bootstrap.js"></script>
+<!-- -------------------------------------------------------------------------------- -->
+<script src="Chart-2.7.1/Chart.bundle.js"></script>
+<script src="Chart-2.7.1/Chart.bundle.min.js"></script>
+<script src="Chart-2.7.1/Chart.js"></script>
+<script src="Chart-2.7.1/Chart.min.js"></script>
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- -------------------------------------------------------------------------------- -->
+<script src="javascript/login.js"></script>
+<script src="javascript/csvController.js"></script>
+<script src="javascript/chartReleaseIt.js"></script>
+<!-- -------------------------------------------------------------------------------- -->
+
+
+</head>
+
+<body ng-app="schedarilasci">
+	<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+		<button class="navbar-toggler navbar-toggler-right" type="button"
+			data-toggle="collapse" data-target="#navbarNavDropdown"
+			aria-controls="navbarNavDropdown" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="container">
+			<a class="navbar-brand" href="#">Scheda Rilasci</a>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item active"><a class="nav-link"
+						href="primapagina.html">Prima Pagina</a></li>
+					<li class="nav-item inactive"><a class="nav-link"
+						href="secondapagina.html">Seconda Pagina</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+
+	<div class="container">
+		<h1>
+			Dashboard <small>Statistics Overview</small>
+		</h1>
+		<ol class="breadcrumb">
+			<li>Dashboard</li>
+		</ol>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm" >
+				<div class="card animated bounceInDown">
+					<div class="card-header">
+						<h2>Informazioni Generali</h2>
+					</div>
+					<div class="container">
+						<div class="row">
+							<div class="col-sm-6">
+								<br>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-primary">Numero Rilasci in IT:
+											<span class="badge badge-default">56</span>
+										</span>
+									</h3>
+								</div>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-info">Data Estrazione: <span
+											class="badge badge-default">{{csv[0].fileDate |
+												date:'yyyy-MM-dd HH:mm:ss'}}</span>
+										</span>
+									</h3>
+								</div>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-warning">Repository: <span
+											class="badge badge-default">{{csv[0].repository}}</span>
+										</span>
+									</h3>
+								</div>
+								<div class="input-group">
+									<h3>
+										<span class="badge badge-danger">Nome file : <span
+											class="badge badge-default">{{csv[0].fileName}}</span>
+										</span>
+									</h3>
+								</div>
+							</div>
+							
+							
+							<div class="col-sm-6">
+							<canvas id="myChart" > </canvas>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+
+
+
+
+
+</body>
+</html>
